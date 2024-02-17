@@ -16,7 +16,15 @@ app.use((req, res, next) => {
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
- 
+
+const corsOptions = {
+  origin: 'https://food-delivery-app-frontend-coral.vercel.app/',
+  methods: 'GET,PUT,POST,DELETE',
+  allowedHeaders: 'Content-Type,Authorization',
+};
+
+app.use(cors(corsOptions));
+
 app.use(express.json())
 app.use('/api', require("./Routes/CreateUser"));
 app.use('/api', require("./Routes/DisplayData"));
