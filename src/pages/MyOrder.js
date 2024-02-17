@@ -7,7 +7,7 @@ export default function MyOrder() {
     const [orderData, setorderData] = useState({})
 
     const fetchMyOrder = async () => {
-        await fetch("http://localhost:5000/api/myOrderData", {
+        await fetch("food-delivery-app-server-three.vercel.app/api/myOrderData", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
